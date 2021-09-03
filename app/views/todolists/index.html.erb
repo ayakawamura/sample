@@ -1,0 +1,13 @@
+<h1>投稿一覧</h1>
+
+<!--@lists.eachと記述することで、Listレコードの数だけ繰り返し処理する-->
+<% @lists.each do |list| %>
+  <p>タイトル</p>
+
+  <span>
+    <!--リンクなしでタイトルを表示する場合<%=list.title%>-->
+    <!--リンクあり・URL<%=link_to list.title,"/todolist/#{list.id}"%>-->
+    <!--リンクあり・名前付きルート-->
+    <%= link_to list.title, todolist_path(list.id)%>
+  </span>
+<%end%>
