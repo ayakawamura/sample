@@ -6,8 +6,8 @@
 
   <span>
     <!--リンクなしでタイトルを表示する場合<%=list.title%>-->
-    <!--リンクあり・URL<%=link_to list.title,"/todolist/#{list.id}"%>-->
-    <!--リンクあり・名前付きルート-->
+    <!--詳細ページのリンクあり・URL<%=link_to list.title,"/todolist/#{list.id}"%>-->
+    <!--詳細ページのリンクあり・名前付きルート-->
     <%= link_to list.title, todolist_path(list.id)%>
   </span>
 <%end%>

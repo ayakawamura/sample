@@ -26,6 +26,19 @@ class TodolistsController < ApplicationController
     # 1件のデータを取り出すので＠list（単数系）
   end
 
+  def edit
+    @list =List.find(params[:id])
+  end
+  
+  def update
+    # 1.編集対象のデータを取得
+    list = List.find(params[:id])
+    # ２. データをアップデート
+    list.update(list_params)
+    # 3.詳細画面へリダイレクト
+    redirect_to todolist_path(list.id)
+  end
+
   private
   # ストロングパラメータ 「ここから下はcontrollerの中でしか呼び出せません」という意味
   def list_params
